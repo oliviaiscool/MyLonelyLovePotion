@@ -1,10 +1,10 @@
-var game = new Phaser.Game(800, 600, Phaser.AUTO, '', { preload: preload, create: create, update: update });
+var game = new Phaser.Game(800, 300, Phaser.AUTO, '', { preload: preload, create: create, update: update });
 
 	var tiledFloors;
 	var player;
 
 	function preload() {
-		game.load.image('city', 'assets/BG.png');
+		game.load.image('space', 'assets/vortex.png');
 		game.load.image('ground', 'assets/BG_brick1DARK.png');
 		game.load.spritesheet('witch', 'assets/witch.png', 42, 42);
 	}
@@ -17,10 +17,10 @@ var game = new Phaser.Game(800, 600, Phaser.AUTO, '', { preload: preload, create
 	    	game.physics.startSystem(Phaser.Physics.ARCADE);
 
 			// Add the green background
-			var city = game.add.sprite(0, 0, 'city');
+			var city = game.add.sprite(0, 0, 'space');
 
-			// Scale it to fit the game (original size: 423x250)
-			city.scale.setTo(1.9, 2.4);
+			// Scale it to fit the game (original size: 800x600)
+			city.scale.setTo(1, 2);
 
 			// Create the floors
 			tiledFloors = game.add.group();
@@ -49,16 +49,33 @@ var game = new Phaser.Game(800, 600, Phaser.AUTO, '', { preload: preload, create
 
 			// Adjust her physics properties	
 		    player.body.bounce.y = 0.2;
-			player.body.gravity.y = 300;
+			player.body.gravity.y = 0;
 			player.body.collideWorldBounds = true;
 
 			// Her flying animation!
 			player.animations.add('flying', [0, 1, 2, 3, 4, 5, 6, 7], 10, true);
 			player.animations.play('flying');
 
+
+		// --- CREATING THE CONTROLS ---
+
+			//Set up a keyboard
+			cursors = game.input.keyboard.createCursorKeys();
+
 	}
 
 	function update() {
 			// Collide the player with the ground
 			game.physics.arcade.collide(player, tiledFloors);
+
+			// Reset the player's velocity
+			player.body.velocity.x = 0;
+
+			// Check for movement
+			if (cursors.up.isDown) {
+				player.body.velocity.y = -150;
+			} else if (cursors.down.isDown) {
+				player.body.velocity.y = 150;
+			}
+
 	}
