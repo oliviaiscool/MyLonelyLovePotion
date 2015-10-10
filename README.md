@@ -1,7 +1,9 @@
 # My Lonely Love Potion
 ## Description:
 You're a lonely little witch whose horde of cats no longer want to be around you. Your bitter, angry, and all out of peanut butter icecream. Your last resort? Total destruction!
-An HTML5 game with Phaser.js~
+
+An HTML5 game with Phaser.js :) 
+
 ## Game Design:
 ### Objective
 Chase your kittens through Central Park on your magic broomstick, shooting rays of warm heart-felt feelings to get them to slow down enough for you to catch them. Get enough smitten kittens on your side to unlock *feline frenzy* so you can finally complete your plans of world domination! AHAHAHAHAHAHAAAAA!
