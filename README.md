@@ -21,3 +21,4 @@ Infinite-runner style, bushes scroll to give the impression of moving on a stati
 * http://opengameart.org/content/20-excellent-8-bit-loops
 * http://opengameart.org/content/witch-bluehat-girl-and-kittens-plaformer
 * http://opengameart.org/content/vortex-background
+* https://opengameart.org/content/minimalist-sidescroll-city
